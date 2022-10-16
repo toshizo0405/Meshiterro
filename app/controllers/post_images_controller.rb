@@ -1,5 +1,6 @@
 class PostImagesController < ApplicationController
   def index
+    @post_images=PostImage.all
   end
 
   def new
@@ -15,9 +16,10 @@ end
 
   def show
   end
-  
+
   private
+
   def post_image_params
-    params.require(:post_image).permit(:shop_name,:image,:caption)
+    params.require(:post_image).permit(:shop_name, :image, :caption)
   end
 end
