@@ -1,6 +1,6 @@
 class PostImagesController < ApplicationController
   def index
-    @post_images=PostImage.all
+    @post_images = PostImage.page(params[:page])
   end
 
   def new
@@ -23,7 +23,7 @@ end
     @post_comment=PostComment.new
   end
 
-  end
+  
 
   def destroy
     @post_image=PostImage.find(params[:id])
@@ -37,3 +37,4 @@ end
     params.require(:post_image).permit(:shop_name, :image, :caption)
   end
 
+end
