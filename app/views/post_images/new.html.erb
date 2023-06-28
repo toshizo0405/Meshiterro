@@ -13,7 +13,6 @@
             <% end %>
           </ul>
         <% end %>
-        
         <%= form_with model: @post_image do |f| %>
           <%= f.file_field :image, accept: "image/*", class: "w-100" %>
           <div class="input-group mb-3 mt-4">
